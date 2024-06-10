@@ -14,7 +14,8 @@ extern "C"{
 #endif
 
     enum CryptoAlgorithm{
-        NO_ALGO
+        NO_ALGO,
+        XOR
     };
 
     typedef struct NotesManagerStr NotesManagerAPI;
@@ -27,7 +28,7 @@ extern "C"{
     typedef struct DecryptedNoteStr DecryptedNote;
 
     uint32_t CryptedNote_GetID(CryptedNote*);
-    DecryptedNote* CryptedNote_Decrypt(CryptedNote*, const wchar_t* passsword);
+    DecryptedNote* CryptedNote_Decrypt(CryptedNote*, const wchar_t* password);
     void CryptedNote_Destroy(CryptedNote*);
 
     DecryptedNote* DecryptedNote_Init();

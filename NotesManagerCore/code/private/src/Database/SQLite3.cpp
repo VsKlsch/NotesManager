@@ -1,15 +1,16 @@
 #include <sstream>
 
-#include <private/include/SQLiteDatabaseRepo.hpp>
+#include "../../include/Usecases/Database.hpp"
+#include "../../include/Repo/SQLite3.hpp"
 
-namespace NotesManager::Repository::SQLite{
+namespace NotesManager::Repository{
     SQLiteRepository::SQLiteRepository(const std::filesystem::path& dbPath){
         static const char query[] = "CREATE TABLE IF NOT EXISTS notes (id INTEGER NOT NULL PRIMARY KEY, algname TEXT NOT NULL, data BLOB NOT NULL, sign BLOB);";
         sqlite3* DB;
         
         int result = sqlite3_open(dbPath.generic_string().c_str(), &DB);
         if(result)
-            throw DatabaseException("Database creation Error");
+            throw Usecases::DatabaseException("Database creation Error");
         
         sqlite3_exec(DB, query, nullptr, nullptr, nullptr);
         this->DB = DB;
@@ -41,8 +42,8 @@ namespace NotesManager::Repository::SQLite{
     }
     
     static int getAllNotesCallback(void* data, int argc, char** argv, char** azColName){
-        std::vector<NoteDTO>* dtos = reinterpret_cast<std::vector<NoteDTO>*>(data);
-        NoteDTO dto;
+        std::vector<Usecases::NoteDTO>* dtos = reinterpret_cast<std::vector<Usecases::NoteDTO>*>(data);
+        Usecases::NoteDTO dto;
         
         for(int i =0; i<argc; ++i){
             std::string colName (azColName[i]);
@@ -60,16 +61,16 @@ namespace NotesManager::Repository::SQLite{
         return 0;
     }
 
-    std::vector<NoteDTO> SQLiteRepository::getAllNotes() const{
+    std::vector<Usecases::NoteDTO> SQLiteRepository::getAllNotes() const{
         static const char query[] = "SELECT id, algname, hex(data) as data, hex(sign) as sign  from notes;";
-        std::vector<NoteDTO> dtos;
+        std::vector<Usecases::NoteDTO> dtos;
         sqlite3_exec(this->DB, query, getAllNotesCallback, reinterpret_cast<void*>(&dtos), nullptr);
         return dtos;
     }
 
     static int getNoteByIdCallback(void* data, int argc, char** argv, char** azColName){
-        std::vector<NoteDTO>* dtos = reinterpret_cast<std::vector<NoteDTO>*>(data);
-        NoteDTO dto;
+        std::vector<Usecases::NoteDTO>* dtos = reinterpret_cast<std::vector<Usecases::NoteDTO>*>(data);
+        Usecases::NoteDTO dto;
         
         for(int i =0; i<argc; ++i){
             std::string colName (azColName[i]);
@@ -87,9 +88,9 @@ namespace NotesManager::Repository::SQLite{
         return 0;
     }
 
-    std::optional<NoteDTO> SQLiteRepository::getNoteById(uint32_t id) const{
+    std::optional<Usecases::NoteDTO> SQLiteRepository::getNoteById(uint32_t id) const{
         std::string query = "SELECT id, algname, hex(data) as data, hex(sign) as sign from notes where id = "+std::to_string(id)+" LIMIT 1 OFFSET 0;";
-        std::vector<NoteDTO> dtos;
+        std::vector<Usecases::NoteDTO> dtos;
         sqlite3_exec(this->DB, query.c_str(), getNoteByIdCallback, reinterpret_cast<void*>(&dtos), nullptr);
         if(dtos.size() > 0){
             return std::move(dtos[0]);
@@ -97,7 +98,7 @@ namespace NotesManager::Repository::SQLite{
         return std::nullopt;
     }
 
-    void SQLiteRepository::insertNote(const NoteDTO& note) const{
+    void SQLiteRepository::insertNote(const Usecases::NoteDTO& note) const{
         static const std::string query = "INSERT INTO notes (algname, data, sign) VALUES(?,?,?);";
         sqlite3_stmt* stmt;
 
@@ -113,7 +114,7 @@ namespace NotesManager::Repository::SQLite{
         sqlite3_exec(this->DB, query.c_str(), nullptr, nullptr, nullptr);
     }
 
-    void SQLiteRepository::updateNote(const NoteDTO& note) const{
+    void SQLiteRepository::updateNote(const Usecases::NoteDTO& note) const{
         static const std::string query = "UPDATE notes SET algname = ?, data = ?, sign = ? WHERE id = ?;";
         sqlite3_stmt* stmt;
 

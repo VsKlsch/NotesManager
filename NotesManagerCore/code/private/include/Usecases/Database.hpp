@@ -1,11 +1,11 @@
 #pragma once
 
-#include <string>
-#include <vector>
 #include <cstdint>
+#include <vector>
 #include <optional>
+#include <string>
 
-namespace NotesManager::Repository{
+namespace NotesManager::Usecases{
     struct NoteDTO{
         uint32_t noteId;
         std::string algorithmName;
@@ -20,7 +20,7 @@ namespace NotesManager::Repository{
         virtual void insertNote(const NoteDTO& note) const =0;
         virtual void removeNoteById(uint32_t id) const =0;
         virtual void updateNote(const NoteDTO& note) const =0;
-        virtual ~IDatabase() {}
+        virtual ~IDatabase() = default;
     };
 
     class DatabaseException : public std::exception{

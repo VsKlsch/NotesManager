@@ -1,0 +1,4 @@
+#pragma once
+
+#define NMANAGER_ALGO_NAME_NO_CRYPTO "NO_ALGO"
+#define NMANAGER_ALGO_NAME_XOR "XOR"
