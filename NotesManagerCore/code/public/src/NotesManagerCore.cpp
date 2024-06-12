@@ -102,7 +102,8 @@ extern "C"{
             out->id = ptrNote->id;
             try{
                 out->note = std::make_unique<Entity::Note>(crypter.Decrypt(*ptrNote->note, password));
-            }catch(const CryptoAlgorithmException& e){
+            }catch(const std::exception& e){
+                std::strcpy(_last_error, e.what());
                 delete out;
                 out = nullptr;
             }
@@ -208,6 +209,7 @@ extern "C"{
                 std::vector<uint8_t>& data = cryptedNote.data;
                 std::vector<uint8_t>& sign = cryptedNote.sign;
                 out = new CryptedNote;
+                out->note = std::make_unique<Entity::EncryptedNote>();
                 out->id = cryptedNote.noteId;
                 out->note->vData = data;
                 out->note->vSign = sign;
