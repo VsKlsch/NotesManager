@@ -1,0 +1,143 @@
+\doxysection{Notes\+Manager\+::Repository\+::No\+Crypto\+Algorithm Class Reference}
+\hypertarget{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm}{}\label{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm}\index{NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}}
+
+
+Cryptography algorithm implementation without crypt. Crypt and decrypt return its params and password is empty.  
+
+
+
+
+{\ttfamily \#include $<$Crypto\+Algorithms.\+hpp$>$}
+
+Inheritance diagram for Notes\+Manager\+::Repository\+::No\+Crypto\+Algorithm\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_ada92ea68af888704509b9f1631bbc895}{Crypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&pass) const noexcept(false) override
+\begin{DoxyCompactList}\small\item\em Pure function for crypt vector with password. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a5e4e6eba5ceb385bfe0ceac2c635ba68}{Decrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&pass) const noexcept(false) override
+\begin{DoxyCompactList}\small\item\em Pure function for decrypt vector with password. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a1f4b7ad4a477c08b77e32e27db61877f}{Sign}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&pass) const noexcept(false) override
+\begin{DoxyCompactList}\small\item\em Pure function for sign vector with password. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Entity\+::\+Crypto\+Algorithm}} \mbox{\hyperlink{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a843837c746bb986f919fca7543f1afe6}{Get\+Algorithm\+Type}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Pure function for return crypto algorithm description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm}{Notes\+Manager\+::\+Repository\+::\+Basic\+Crypto\+Algorithm}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a2f777271c0879d5ce319e7629945e1ed}{Verify}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&sign1, const std\+::vector$<$ uint8\+\_\+t $>$ \&sign2) const noexcept override
+\begin{DoxyCompactList}\small\item\em Pure function for verification sign. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cryptography algorithm implementation without crypt. Crypt and decrypt return its params and password is empty. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_ada92ea68af888704509b9f1631bbc895}\label{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_ada92ea68af888704509b9f1631bbc895} 
+\index{NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}!Crypt@{Crypt}}
+\index{Crypt@{Crypt}!NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}}
+\doxysubsubsection{\texorpdfstring{Crypt()}{Crypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Notes\+Manager\+::\+Repository\+::\+No\+Crypto\+Algorithm\+::\+Crypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{pass }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure function for crypt vector with password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data for crypt \\
+\hline
+{\em pass} & Password for crypt\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Crypted data
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function may throw exception 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a08370e04ce0786d90640f70e8d841d43}{Notes\+Manager\+::\+Repository\+::\+Basic\+Crypto\+Algorithm}}.
+
+\Hypertarget{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a5e4e6eba5ceb385bfe0ceac2c635ba68}\label{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a5e4e6eba5ceb385bfe0ceac2c635ba68} 
+\index{NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}!Decrypt@{Decrypt}}
+\index{Decrypt@{Decrypt}!NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}}
+\doxysubsubsection{\texorpdfstring{Decrypt()}{Decrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Notes\+Manager\+::\+Repository\+::\+No\+Crypto\+Algorithm\+::\+Decrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{pass }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure function for decrypt vector with password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data for decrypt \\
+\hline
+{\em pass} & Password for decrypt\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derypted data
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function may throw exception if password is incorrect or another error occured 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_acde2c20e204699ef09538ab879447484}{Notes\+Manager\+::\+Repository\+::\+Basic\+Crypto\+Algorithm}}.
+
+\Hypertarget{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a843837c746bb986f919fca7543f1afe6}\label{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a843837c746bb986f919fca7543f1afe6} 
+\index{NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}!GetAlgorithmType@{GetAlgorithmType}}
+\index{GetAlgorithmType@{GetAlgorithmType}!NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}}
+\doxysubsubsection{\texorpdfstring{GetAlgorithmType()}{GetAlgorithmType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Entity\+::\+Crypto\+Algorithm}} Notes\+Manager\+::\+Repository\+::\+No\+Crypto\+Algorithm\+::\+Get\+Algorithm\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}, {\ttfamily [noexcept]}}
+
+
+
+Pure function for return crypto algorithm description. 
+
+\begin{DoxyReturn}{Returns}
+Algorithm description object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a5866f97f2113acb59038d4864d966054}{Notes\+Manager\+::\+Repository\+::\+Basic\+Crypto\+Algorithm}}.
+
+\Hypertarget{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a1f4b7ad4a477c08b77e32e27db61877f}\label{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm_a1f4b7ad4a477c08b77e32e27db61877f} 
+\index{NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}!Sign@{Sign}}
+\index{Sign@{Sign}!NotesManager::Repository::NoCryptoAlgorithm@{NotesManager::Repository::NoCryptoAlgorithm}}
+\doxysubsubsection{\texorpdfstring{Sign()}{Sign()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Notes\+Manager\+::\+Repository\+::\+No\+Crypto\+Algorithm\+::\+Sign (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{pass }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Pure function for sign vector with password. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data for sign \\
+\hline
+{\em pass} & Password for sign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Signature
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function may throw exception if password is incorrect or another error occured 
+\end{DoxyWarning}
+
+
+Implements \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_ab66b4c20df83cb10c5936855dad30901}{Notes\+Manager\+::\+Repository\+::\+Basic\+Crypto\+Algorithm}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Repo/Crypto\+Algorithms.\+hpp\item 
+src/\+Crypto\+Algorithms/No\+Crypto\+Algorithm.\+cpp\end{DoxyCompactItemize}

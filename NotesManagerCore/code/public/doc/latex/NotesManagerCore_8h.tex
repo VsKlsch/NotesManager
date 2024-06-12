@@ -1,0 +1,399 @@
+\doxysection{include/\+Notes\+Manager\+Core.h File Reference}
+\hypertarget{NotesManagerCore_8h}{}\label{NotesManagerCore_8h}\index{include/NotesManagerCore.h@{include/NotesManagerCore.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$wchar.\+h$>$}\newline
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structNotesManagerStr}{Notes\+Manager\+Str}} \mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}}
+\begin{DoxyCompactList}\small\item\em Not full API struct, realized in cpp file. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structCryptedNoteStr}{Crypted\+Note\+Str}} \mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}}
+\begin{DoxyCompactList}\small\item\em Not fully struct that describes Crypted Note. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structDecryptedNoteStr}{Decrypted\+Note\+Str}} \mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}}
+\begin{DoxyCompactList}\small\item\em Not fully struct that describes Decrypted Note. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{Crypto\+Algorithm}} \{ \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06a32afee6483f3082774284bf7a7760a5a}{NO\+\_\+\+ALGO}}
+, \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06ac62338ffb5de22369c75caa565b5da1a}{XOR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a5cbfd055fce4ab6eac2821a9ff0c58b3}{Notes\+Manager\+API\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initilize API. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a31386475f7c53325c85082e6f2632c03}{Notes\+Manager\+API\+\_\+\+Destroy}} (\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Destroy API object. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{NotesManagerCore_8h_a58d821dc744f4db8b0580e0c152f68ff}{Crypted\+Note\+\_\+\+Get\+ID}} (\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Crypted Note API. ID Getter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a719357d53c778afab61e65cbc97a19ee}{Crypted\+Note\+\_\+\+Decrypt}} (\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}, const wchar\+\_\+t \texorpdfstring{$\ast$}{*}password)
+\begin{DoxyCompactList}\small\item\em Crypted Note API. Decrypt function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_abd18557c5fb9127af3c1ea94e342723f}{Crypted\+Note\+\_\+\+Destroy}} (\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Crypted Note API. Destroy function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a97a2c3da9df6ee5087f0a0c8e4e7ba22}{Decrypted\+Note\+\_\+\+Init}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{NotesManagerCore_8h_a0f753f1f7220793723ebaf57b4635332}{Decrypted\+Note\+\_\+\+Get\+ID}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{NotesManagerCore_8h_af365b437de5e47bb1089207a07c22c7f}{Decrypted\+Note\+\_\+\+Get\+Data\+Size}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*})
+\item 
+const wchar\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a2309667f2c5edc20da428f59423547bb}{Decrypted\+Note\+\_\+\+Get\+Data}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*})
+\item 
+uint32\+\_\+t \mbox{\hyperlink{NotesManagerCore_8h_a6ab550325b1256e5b066f30593cf0742}{Decrypted\+Note\+\_\+\+Get\+Title\+Size}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*})
+\item 
+const wchar\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a16613832a3da608bc1f5e1859b44c252}{Decrypted\+Note\+\_\+\+Get\+Title}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a3441599b129621944588432066350ce8}{Decrypted\+Note\+\_\+\+Set\+Title}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}, wchar\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a7e01a4306217ab4c7737e1b42e510bd2}{Decrypted\+Note\+\_\+\+Set\+Data}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}, wchar\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a4c4a7c5adae03b295839124a27756240}{Decrypted\+Note\+\_\+\+Destroy}} (\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*})
+\item 
+\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a9b7d481742e0abc6d00f2d25708dbddf}{Notes\+Manager\+API\+\_\+\+Get\+All\+Notes}} (\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}, uint32\+\_\+t \texorpdfstring{$\ast$}{*}cnt\+Notes)
+\item 
+\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a45a64118d85ca6c3f9cf0bc679c57bb1}{Notes\+Manager\+API\+\_\+\+Get\+Note\+By\+Id}} (\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}, uint32\+\_\+t id)
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a86ae50bb9c17bcc9d20f0088aed9a18e}{Notes\+Manager\+API\+\_\+\+Update\+Note}} (\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}, uint32\+\_\+t id, \mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}, enum \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{Crypto\+Algorithm}}, wchar\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a98bad42d8dccddb0f148f337a645e8c1}{Notes\+Manager\+API\+\_\+\+Delete\+Note}} (\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}, uint32\+\_\+t id)
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a9073d6c11e76c4c253c03f7babb2fa77}{Notes\+Manager\+API\+\_\+\+Insert\+Note}} (\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}, enum \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{Crypto\+Algorithm}}, wchar\+\_\+t \texorpdfstring{$\ast$}{*})
+\item 
+void \mbox{\hyperlink{NotesManagerCore_8h_a5e2f2dde60fbec26701b46473c76aac8}{Notes\+Manager\+API\+\_\+\+Free\+Notes\+Array}} (\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}, uint32\+\_\+t cnt\+Notes)
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{NotesManagerCore_8h_a5998fa9f34967ae22aa839be03d220a6}{Get\+Last\+Error}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}\label{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!CryptedNote@{CryptedNote}}
+\index{CryptedNote@{CryptedNote}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{CryptedNote}{CryptedNote}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structCryptedNoteStr}{Crypted\+Note\+Str}} \mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}}}
+
+
+
+Not fully struct that describes Crypted Note. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr\+Note} & Pointer to API \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8h_source_l00043}{43}} of file \mbox{\hyperlink{NotesManagerCore_8h_source}{Notes\+Manager\+Core.\+h}}.
+
+\Hypertarget{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}\label{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote@{DecryptedNote}}
+\index{DecryptedNote@{DecryptedNote}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote}{DecryptedNote}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structDecryptedNoteStr}{Decrypted\+Note\+Str}} \mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}}}
+
+
+
+Not fully struct that describes Decrypted Note. 
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8h_source_l00048}{48}} of file \mbox{\hyperlink{NotesManagerCore_8h_source}{Notes\+Manager\+Core.\+h}}.
+
+\Hypertarget{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}\label{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI@{NotesManagerAPI}}
+\index{NotesManagerAPI@{NotesManagerAPI}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI}{NotesManagerAPI}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structNotesManagerStr}{Notes\+Manager\+Str}} \mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}}}
+
+
+
+Not full API struct, realized in cpp file. 
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8h_source_l00024}{24}} of file \mbox{\hyperlink{NotesManagerCore_8h_source}{Notes\+Manager\+Core.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}\label{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!CryptoAlgorithm@{CryptoAlgorithm}}
+\index{CryptoAlgorithm@{CryptoAlgorithm}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{CryptoAlgorithm}{CryptoAlgorithm}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{Crypto\+Algorithm}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ALGO@{NO\_ALGO}!NotesManagerCore.h@{NotesManagerCore.h}}\index{NotesManagerCore.h@{NotesManagerCore.h}!NO\_ALGO@{NO\_ALGO}}}\Hypertarget{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06a32afee6483f3082774284bf7a7760a5a}\label{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06a32afee6483f3082774284bf7a7760a5a} 
+NO\+\_\+\+ALGO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XOR@{XOR}!NotesManagerCore.h@{NotesManagerCore.h}}\index{NotesManagerCore.h@{NotesManagerCore.h}!XOR@{XOR}}}\Hypertarget{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06ac62338ffb5de22369c75caa565b5da1a}\label{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06ac62338ffb5de22369c75caa565b5da1a} 
+XOR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8h_source_l00016}{16}} of file \mbox{\hyperlink{NotesManagerCore_8h_source}{Notes\+Manager\+Core.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{NotesManagerCore_8h_a719357d53c778afab61e65cbc97a19ee}\label{NotesManagerCore_8h_a719357d53c778afab61e65cbc97a19ee} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!CryptedNote\_Decrypt@{CryptedNote\_Decrypt}}
+\index{CryptedNote\_Decrypt@{CryptedNote\_Decrypt}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{CryptedNote\_Decrypt()}{CryptedNote\_Decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*} Crypted\+Note\+\_\+\+Decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note,  }\item[{const wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{password }\end{DoxyParamCaption})}
+
+
+
+Crypted Note API. Decrypt function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr\+Note} & Ptr to Crypted Note structure \\
+\hline
+{\em password} & Pointer to wide-\/char c-\/style string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to Decrypted Note or NULL if error has occured 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_abd18557c5fb9127af3c1ea94e342723f}\label{NotesManagerCore_8h_abd18557c5fb9127af3c1ea94e342723f} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!CryptedNote\_Destroy@{CryptedNote\_Destroy}}
+\index{CryptedNote\_Destroy@{CryptedNote\_Destroy}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{CryptedNote\_Destroy()}{CryptedNote\_Destroy()}}
+{\footnotesize\ttfamily void Crypted\+Note\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Crypted Note API. Destroy function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr\+Note} & Pointer to Crypted Note struct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a58d821dc744f4db8b0580e0c152f68ff}\label{NotesManagerCore_8h_a58d821dc744f4db8b0580e0c152f68ff} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!CryptedNote\_GetID@{CryptedNote\_GetID}}
+\index{CryptedNote\_GetID@{CryptedNote\_GetID}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{CryptedNote\_GetID()}{CryptedNote\_GetID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Crypted\+Note\+\_\+\+Get\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Crypted Note API. ID Getter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr\+Note} & Ptr to Crypted Note structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID or 0 if error has occured 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a4c4a7c5adae03b295839124a27756240}\label{NotesManagerCore_8h_a4c4a7c5adae03b295839124a27756240} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_Destroy@{DecryptedNote\_Destroy}}
+\index{DecryptedNote\_Destroy@{DecryptedNote\_Destroy}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_Destroy()}{DecryptedNote\_Destroy()}}
+{\footnotesize\ttfamily void Decrypted\+Note\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a2309667f2c5edc20da428f59423547bb}\label{NotesManagerCore_8h_a2309667f2c5edc20da428f59423547bb} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_GetData@{DecryptedNote\_GetData}}
+\index{DecryptedNote\_GetData@{DecryptedNote\_GetData}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_GetData()}{DecryptedNote\_GetData()}}
+{\footnotesize\ttfamily const wchar\+\_\+t \texorpdfstring{$\ast$}{*} Decrypted\+Note\+\_\+\+Get\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00140}{140}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_af365b437de5e47bb1089207a07c22c7f}\label{NotesManagerCore_8h_af365b437de5e47bb1089207a07c22c7f} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_GetDataSize@{DecryptedNote\_GetDataSize}}
+\index{DecryptedNote\_GetDataSize@{DecryptedNote\_GetDataSize}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_GetDataSize()}{DecryptedNote\_GetDataSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Decrypted\+Note\+\_\+\+Get\+Data\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a0f753f1f7220793723ebaf57b4635332}\label{NotesManagerCore_8h_a0f753f1f7220793723ebaf57b4635332} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_GetID@{DecryptedNote\_GetID}}
+\index{DecryptedNote\_GetID@{DecryptedNote\_GetID}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_GetID()}{DecryptedNote\_GetID()}}
+{\footnotesize\ttfamily uint32\+\_\+t Decrypted\+Note\+\_\+\+Get\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a16613832a3da608bc1f5e1859b44c252}\label{NotesManagerCore_8h_a16613832a3da608bc1f5e1859b44c252} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_GetTitle@{DecryptedNote\_GetTitle}}
+\index{DecryptedNote\_GetTitle@{DecryptedNote\_GetTitle}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_GetTitle()}{DecryptedNote\_GetTitle()}}
+{\footnotesize\ttfamily const wchar\+\_\+t \texorpdfstring{$\ast$}{*} Decrypted\+Note\+\_\+\+Get\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00152}{152}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a6ab550325b1256e5b066f30593cf0742}\label{NotesManagerCore_8h_a6ab550325b1256e5b066f30593cf0742} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_GetTitleSize@{DecryptedNote\_GetTitleSize}}
+\index{DecryptedNote\_GetTitleSize@{DecryptedNote\_GetTitleSize}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_GetTitleSize()}{DecryptedNote\_GetTitleSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Decrypted\+Note\+\_\+\+Get\+Title\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00146}{146}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a97a2c3da9df6ee5087f0a0c8e4e7ba22}\label{NotesManagerCore_8h_a97a2c3da9df6ee5087f0a0c8e4e7ba22} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_Init@{DecryptedNote\_Init}}
+\index{DecryptedNote\_Init@{DecryptedNote\_Init}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_Init()}{DecryptedNote\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*} Decrypted\+Note\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a7e01a4306217ab4c7737e1b42e510bd2}\label{NotesManagerCore_8h_a7e01a4306217ab4c7737e1b42e510bd2} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_SetData@{DecryptedNote\_SetData}}
+\index{DecryptedNote\_SetData@{DecryptedNote\_SetData}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_SetData()}{DecryptedNote\_SetData()}}
+{\footnotesize\ttfamily void Decrypted\+Note\+\_\+\+Set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note,  }\item[{wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{ptr\+Title }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a3441599b129621944588432066350ce8}\label{NotesManagerCore_8h_a3441599b129621944588432066350ce8} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!DecryptedNote\_SetTitle@{DecryptedNote\_SetTitle}}
+\index{DecryptedNote\_SetTitle@{DecryptedNote\_SetTitle}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{DecryptedNote\_SetTitle()}{DecryptedNote\_SetTitle()}}
+{\footnotesize\ttfamily void Decrypted\+Note\+\_\+\+Set\+Title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{ptr\+Note,  }\item[{wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{ptr\+Title }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a5998fa9f34967ae22aa839be03d220a6}\label{NotesManagerCore_8h_a5998fa9f34967ae22aa839be03d220a6} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!GetLastError@{GetLastError}}
+\index{GetLastError@{GetLastError}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{GetLastError()}{GetLastError()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Get\+Last\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a98bad42d8dccddb0f148f337a645e8c1}\label{NotesManagerCore_8h_a98bad42d8dccddb0f148f337a645e8c1} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_DeleteNote@{NotesManagerAPI\_DeleteNote}}
+\index{NotesManagerAPI\_DeleteNote@{NotesManagerAPI\_DeleteNote}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_DeleteNote()}{NotesManagerAPI\_DeleteNote()}}
+{\footnotesize\ttfamily void Notes\+Manager\+API\+\_\+\+Delete\+Note (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}}]{api,  }\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00257}{257}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a31386475f7c53325c85082e6f2632c03}\label{NotesManagerCore_8h_a31386475f7c53325c85082e6f2632c03} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_Destroy@{NotesManagerAPI\_Destroy}}
+\index{NotesManagerAPI\_Destroy@{NotesManagerAPI\_Destroy}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_Destroy()}{NotesManagerAPI\_Destroy()}}
+{\footnotesize\ttfamily void Notes\+Manager\+API\+\_\+\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}}]{api }\end{DoxyParamCaption})}
+
+
+
+Destroy API object. 
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a5e2f2dde60fbec26701b46473c76aac8}\label{NotesManagerCore_8h_a5e2f2dde60fbec26701b46473c76aac8} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_FreeNotesArray@{NotesManagerAPI\_FreeNotesArray}}
+\index{NotesManagerAPI\_FreeNotesArray@{NotesManagerAPI\_FreeNotesArray}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_FreeNotesArray()}{NotesManagerAPI\_FreeNotesArray()}}
+{\footnotesize\ttfamily void Notes\+Manager\+API\+\_\+\+Free\+Notes\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{notes\+List,  }\item[{uint32\+\_\+t}]{cnt\+Notes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a9b7d481742e0abc6d00f2d25708dbddf}\label{NotesManagerCore_8h_a9b7d481742e0abc6d00f2d25708dbddf} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_GetAllNotes@{NotesManagerAPI\_GetAllNotes}}
+\index{NotesManagerAPI\_GetAllNotes@{NotesManagerAPI\_GetAllNotes}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_GetAllNotes()}{NotesManagerAPI\_GetAllNotes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Notes\+Manager\+API\+\_\+\+Get\+All\+Notes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}}]{api,  }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{cnt\+Notes }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00177}{177}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a45a64118d85ca6c3f9cf0bc679c57bb1}\label{NotesManagerCore_8h_a45a64118d85ca6c3f9cf0bc679c57bb1} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_GetNoteById@{NotesManagerAPI\_GetNoteById}}
+\index{NotesManagerAPI\_GetNoteById@{NotesManagerAPI\_GetNoteById}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_GetNoteById()}{NotesManagerAPI\_GetNoteById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{Crypted\+Note}} \texorpdfstring{$\ast$}{*} Notes\+Manager\+API\+\_\+\+Get\+Note\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}}]{api,  }\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a5cbfd055fce4ab6eac2821a9ff0c58b3}\label{NotesManagerCore_8h_a5cbfd055fce4ab6eac2821a9ff0c58b3} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_Init@{NotesManagerAPI\_Init}}
+\index{NotesManagerAPI\_Init@{NotesManagerAPI\_Init}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_Init()}{NotesManagerAPI\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*} Notes\+Manager\+API\+\_\+\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initilize API. 
+
+\begin{DoxyReturn}{Returns}
+Ptr to API struct or NULL if error has occured 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a9073d6c11e76c4c253c03f7babb2fa77}\label{NotesManagerCore_8h_a9073d6c11e76c4c253c03f7babb2fa77} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_InsertNote@{NotesManagerAPI\_InsertNote}}
+\index{NotesManagerAPI\_InsertNote@{NotesManagerAPI\_InsertNote}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_InsertNote()}{NotesManagerAPI\_InsertNote()}}
+{\footnotesize\ttfamily void Notes\+Manager\+API\+\_\+\+Insert\+Note (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}}]{api,  }\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{note,  }\item[{enum}]{Crypto\+Algorithm,  }\item[{wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{password\+Raw }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+
+\Hypertarget{NotesManagerCore_8h_a86ae50bb9c17bcc9d20f0088aed9a18e}\label{NotesManagerCore_8h_a86ae50bb9c17bcc9d20f0088aed9a18e} 
+\index{NotesManagerCore.h@{NotesManagerCore.h}!NotesManagerAPI\_UpdateNote@{NotesManagerAPI\_UpdateNote}}
+\index{NotesManagerAPI\_UpdateNote@{NotesManagerAPI\_UpdateNote}!NotesManagerCore.h@{NotesManagerCore.h}}
+\doxysubsubsection{\texorpdfstring{NotesManagerAPI\_UpdateNote()}{NotesManagerAPI\_UpdateNote()}}
+{\footnotesize\ttfamily void Notes\+Manager\+API\+\_\+\+Update\+Note (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{Notes\+Manager\+API}} \texorpdfstring{$\ast$}{*}}]{api,  }\item[{uint32\+\_\+t}]{id,  }\item[{\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{Decrypted\+Note}} \texorpdfstring{$\ast$}{*}}]{note,  }\item[{enum}]{Crypto\+Algorithm,  }\item[{wchar\+\_\+t \texorpdfstring{$\ast$}{*}}]{password\+Raw }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{NotesManagerCore_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{NotesManagerCore_8cpp_source}{Notes\+Manager\+Core.\+cpp}}.
+

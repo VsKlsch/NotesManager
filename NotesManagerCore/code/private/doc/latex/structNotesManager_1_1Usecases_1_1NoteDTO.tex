@@ -1,0 +1,34 @@
+\doxysection{Notes\+Manager\+::Usecases\+::Note\+DTO Struct Reference}
+\hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO}{}\label{structNotesManager_1_1Usecases_1_1NoteDTO}\index{NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}}
+
+
+Basic model for database.  
+
+
+
+
+{\ttfamily \#include $<$Database.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_a849090e160ffe69ed9bec857a1364803}\label{structNotesManager_1_1Usecases_1_1NoteDTO_a849090e160ffe69ed9bec857a1364803} 
+uint32\+\_\+t {\bfseries note\+Id}
+\begin{DoxyCompactList}\small\item\em Database id of note. \end{DoxyCompactList}\item 
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_ab7df849bdd3bf1a52bb9d31563e874ca}\label{structNotesManager_1_1Usecases_1_1NoteDTO_ab7df849bdd3bf1a52bb9d31563e874ca} 
+std\+::string {\bfseries algorithm\+Name}
+\begin{DoxyCompactList}\small\item\em String representation of cryptoalgorithm. \end{DoxyCompactList}\item 
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_ae081d61a778f0464ced3d2795e53601d}\label{structNotesManager_1_1Usecases_1_1NoteDTO_ae081d61a778f0464ced3d2795e53601d} 
+std\+::vector$<$ uint8\+\_\+t $>$ {\bfseries data}
+\begin{DoxyCompactList}\small\item\em Byte blob of encrypted data. \end{DoxyCompactList}\item 
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_af3835211f1a9e9b4cea2470f6ebf650a}\label{structNotesManager_1_1Usecases_1_1NoteDTO_af3835211f1a9e9b4cea2470f6ebf650a} 
+std\+::vector$<$ uint8\+\_\+t $>$ {\bfseries sign}
+\begin{DoxyCompactList}\small\item\em Byte blob of signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic model for database. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Usecases/Database.\+hpp\end{DoxyCompactItemize}

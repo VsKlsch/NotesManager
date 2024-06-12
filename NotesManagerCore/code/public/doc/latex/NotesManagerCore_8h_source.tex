@@ -1,0 +1,66 @@
+\doxysection{Notes\+Manager\+Core.\+h}
+\hypertarget{NotesManagerCore_8h_source}{}\label{NotesManagerCore_8h_source}\index{include/NotesManagerCore.h@{include/NotesManagerCore.h}}
+\mbox{\hyperlink{NotesManagerCore_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <cwchar>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00008}00008\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\{}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00009}00009\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <wchar.h>}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00014}00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00016}\mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{00016}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{CryptoAlgorithm}}\{}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00017}\mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06a32afee6483f3082774284bf7a7760a5a}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06a32afee6483f3082774284bf7a7760a5a}{NO\_ALGO}},}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06ac62338ffb5de22369c75caa565b5da1a}{XOR}}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00019}\mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06ac62338ffb5de22369c75caa565b5da1a}{00019}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00024}\mbox{\hyperlink{NotesManagerCore_8h_a168fbf870ac69746b1d8ee4a0cb3666f}{00024}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structNotesManagerStr}{NotesManagerStr}}\ \mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}};}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*\ \mbox{\hyperlink{NotesManagerCore_8h_a5cbfd055fce4ab6eac2821a9ff0c58b3}{NotesManagerAPI\_Init}}();}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a31386475f7c53325c85082e6f2632c03}{NotesManagerAPI\_Destroy}}(\mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00043}\mbox{\hyperlink{NotesManagerCore_8h_a100bd23630924bd61822616c98faa062}{00043}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structCryptedNoteStr}{CryptedNoteStr}}\ \mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}};}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00048}\mbox{\hyperlink{NotesManagerCore_8h_a01f1c3a72f9d5a95273ee79870ce4b13}{00048}}\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNoteStr}}\ \mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}};}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00057}00057\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{NotesManagerCore_8h_a58d821dc744f4db8b0580e0c152f68ff}{CryptedNote\_GetID}}(\mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*\ \mbox{\hyperlink{NotesManagerCore_8h_a719357d53c778afab61e65cbc97a19ee}{CryptedNote\_Decrypt}}(\mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}}*,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ password);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_abd18557c5fb9127af3c1ea94e342723f}{CryptedNote\_Destroy}}(\mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*\ \mbox{\hyperlink{NotesManagerCore_8h_a97a2c3da9df6ee5087f0a0c8e4e7ba22}{DecryptedNote\_Init}}();}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00077}00077\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{NotesManagerCore_8h_a0f753f1f7220793723ebaf57b4635332}{DecryptedNote\_GetID}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00078}00078\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{NotesManagerCore_8h_af365b437de5e47bb1089207a07c22c7f}{DecryptedNote\_GetDataSize}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00079}00079\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ \mbox{\hyperlink{NotesManagerCore_8h_a2309667f2c5edc20da428f59423547bb}{DecryptedNote\_GetData}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00080}00080\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{NotesManagerCore_8h_a6ab550325b1256e5b066f30593cf0742}{DecryptedNote\_GetTitleSize}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ \mbox{\hyperlink{NotesManagerCore_8h_a16613832a3da608bc1f5e1859b44c252}{DecryptedNote\_GetTitle}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a3441599b129621944588432066350ce8}{DecryptedNote\_SetTitle}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*,\ \textcolor{keywordtype}{wchar\_t}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a7e01a4306217ab4c7737e1b42e510bd2}{DecryptedNote\_SetData}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*,\ \textcolor{keywordtype}{wchar\_t}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a4c4a7c5adae03b295839124a27756240}{DecryptedNote\_Destroy}}(\mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}}**\ \mbox{\hyperlink{NotesManagerCore_8h_a9b7d481742e0abc6d00f2d25708dbddf}{NotesManagerAPI\_GetAllNotes}}(\mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*,\ uint32\_t*\ cntNotes);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}}*\ \mbox{\hyperlink{NotesManagerCore_8h_a45a64118d85ca6c3f9cf0bc679c57bb1}{NotesManagerAPI\_GetNoteById}}(\mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*,\ uint32\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a86ae50bb9c17bcc9d20f0088aed9a18e}{NotesManagerAPI\_UpdateNote}}(\mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*,\ uint32\_t\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{CryptoAlgorithm}},\ \textcolor{keywordtype}{wchar\_t}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a98bad42d8dccddb0f148f337a645e8c1}{NotesManagerAPI\_DeleteNote}}(\mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*,\ uint32\_t\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a9073d6c11e76c4c253c03f7babb2fa77}{NotesManagerAPI\_InsertNote}}(\mbox{\hyperlink{structNotesManagerStr}{NotesManagerAPI}}*,\ \mbox{\hyperlink{structDecryptedNoteStr}{DecryptedNote}}*,\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{NotesManagerCore_8h_ab89494d102baf3b7b7b41b4c58750d06}{CryptoAlgorithm}},\ \textcolor{keywordtype}{wchar\_t}*);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{NotesManagerCore_8h_a5e2f2dde60fbec26701b46473c76aac8}{NotesManagerAPI\_FreeNotesArray}}(\mbox{\hyperlink{structCryptedNoteStr}{CryptedNote}}**,\ uint32\_t\ cntNotes);}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00094}00094\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{NotesManagerCore_8h_a5998fa9f34967ae22aa839be03d220a6}{GetLastError}}();}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00096}00096\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00097}00097\ \}}
+\DoxyCodeLine{\Hypertarget{NotesManagerCore_8h_source_l00098}00098\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
