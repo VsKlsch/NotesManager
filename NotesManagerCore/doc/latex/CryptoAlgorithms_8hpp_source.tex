@@ -1,0 +1,66 @@
+\doxysection{Crypto\+Algorithms.\+hpp}
+\hypertarget{CryptoAlgorithms_8hpp_source}{}\label{CryptoAlgorithms_8hpp_source}\index{code/private/include/Repo/CryptoAlgorithms.hpp@{code/private/include/Repo/CryptoAlgorithms.hpp}}
+\mbox{\hyperlink{CryptoAlgorithms_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Signer_8hpp}{../Usecases/Signer.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CryptoAlgorithm_8hpp}{../Usecases/CryptoAlgorithm.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceNotesManager_1_1Repository}{NotesManager::Repository}}\{}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm}{BasicCryptoAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1ICryptoAlgorithm}{Usecases::ICryptoAlgorithm}}\{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a08370e04ce0786d90640f70e8d841d43}{Crypt}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override}\ =0;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_acde2c20e204699ef09538ab879447484}{Decrypt}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override}\ =0;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_ab66b4c20df83cb10c5936855dad30901}{Sign}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override}\ =0;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a2f777271c0879d5ce319e7629945e1ed}{Verify}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ sign1,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ sign2)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Entity::CryptoAlgorithm}}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a5866f97f2113acb59038d4864d966054}{GetAlgorithmType}}()\ const\ noexcept\ override\ =0;}
+\DoxyCodeLine{00023\ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ class\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1NoCryptoAlgorithm}{NoCryptoAlgorithm}}\ :\ public\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm}{BasicCryptoAlgorithm}}\{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a08370e04ce0786d90640f70e8d841d43}{Crypt}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_acde2c20e204699ef09538ab879447484}{Decrypt}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_ab66b4c20df83cb10c5936855dad30901}{Sign}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Entity::CryptoAlgorithm}}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm_a5866f97f2113acb59038d4864d966054}{GetAlgorithmType}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{template}<Usecases::SignAlgorithmImplementation\ SignerAlg>}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNotesManager_1_1Repository_1_1XorCryptoAlgorithm}{XorCryptoAlgorithm}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1BasicCryptoAlgorithm}{BasicCryptoAlgorithm}}\{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1XorCryptoAlgorithm_a35631caf4377d69f6395d7d06e521372}{Crypt}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override}\{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pass.size()\ ==\ 0)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classNotesManager_1_1CryptoAlgorithmException}{CryptoAlgorithmException}}(\textcolor{stringliteral}{"{}Short\ password"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<uint8\_t>\ out;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::size\_t\ offPass,\ offData;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(offPass\ =\ 0,\ offData\ =\ 0;\ offData<data.size();\ ++offPass,\ ++offData)\{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ offPass\ \%=\ pass.size();}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out.push\_back(pass[offPass]\string^data[offData]);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1XorCryptoAlgorithm_aa0ad699126fca1d4e8f553406cc09985}{Decrypt}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override}\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pass.size()\ ==\ 0)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classNotesManager_1_1CryptoAlgorithmException}{CryptoAlgorithmException}}(\textcolor{stringliteral}{"{}Short\ password"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>Crypt(data,\ pass);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<uint8\_t>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1XorCryptoAlgorithm_abe49463f71d64487c72328ed8efcded3}{Sign}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ data,\ \textcolor{keyword}{const}\ std::vector<uint8\_t>\&\ pass)\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{false})\ \textcolor{keyword}{override}\{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pass.size()\ ==\ 0)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classNotesManager_1_1CryptoAlgorithmException}{CryptoAlgorithmException}}(\textcolor{stringliteral}{"{}Short\ password"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ alg.Sign(data,\ pass);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Entity::CryptoAlgorithm}}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1XorCryptoAlgorithm_a1933e73a0d3c6836b49051ce7f20e235}{GetAlgorithmType}}()\ const\ noexcept\textcolor{keyword}{\ override}\{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Entity::CryptoAlgorithm}}(Entity::CryptoAlgorithm::CryptoAlgorithmValue::Xor);\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ SignerAlg\ alg;}
+\DoxyCodeLine{00077\ \ \ \ \ \};}
+\DoxyCodeLine{00078\ \}}
+
+\end{DoxyCode}

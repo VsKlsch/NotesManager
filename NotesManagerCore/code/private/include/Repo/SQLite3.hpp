@@ -7,6 +7,9 @@
 #include <sqlite3.h>
 
 namespace NotesManager::Repository{
+    /*!
+        \brief SQLite implementation of IDatabase 
+    */
     class SQLiteRepository : public Usecases::IDatabase{
     public:
         explicit SQLiteRepository(const std::filesystem::path& dbPath);

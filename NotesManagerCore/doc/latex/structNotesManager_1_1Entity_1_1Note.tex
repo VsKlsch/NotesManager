@@ -1,0 +1,114 @@
+\doxysection{Notes\+Manager\+::Entity\+::Note Struct Reference}
+\hypertarget{structNotesManager_1_1Entity_1_1Note}{}\label{structNotesManager_1_1Entity_1_1Note}\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+
+
+Struct \doxylink{structNotesManager_1_1Entity_1_1Note}{Note} describes decrypted data note.  
+
+
+
+
+{\ttfamily \#include $<$Note.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note_a17d84d62356069c65b35d90383f9196e}{Note}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note_a1decaf165f9ea1f107c86bb80f34d7d5}{Note}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&serialized\+Data, \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Crypto\+Algorithm}} alg) noexcept(false)
+\begin{DoxyCompactList}\small\item\em Deserialization constructor. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note_a8be387c14aa220a2ffd2260272ae785e}{Serialize}} () const
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wstring \mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note_a3de7fe276d5c9195df42fbdfd74685cb}{ws\+Title}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structNotesManager_1_1Entity_1_1Note}{Note} title. \end{DoxyCompactList}\item 
+std\+::wstring \mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note_af7c81312f79cd8172985e4a26847d951}{ws\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structNotesManager_1_1Entity_1_1Note}{Note} data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Crypto\+Algorithm}} \mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note_a5989865a0ae11f4ba794714e7eb041a4}{algorithm}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structNotesManager_1_1Entity_1_1Note}{Note} algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct \doxylink{structNotesManager_1_1Entity_1_1Note}{Note} describes decrypted data note. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structNotesManager_1_1Entity_1_1Note_a17d84d62356069c65b35d90383f9196e}\label{structNotesManager_1_1Entity_1_1Note_a17d84d62356069c65b35d90383f9196e} 
+\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}!Note@{Note}}
+\index{Note@{Note}!NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+\doxysubsubsection{\texorpdfstring{Note()}{Note()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structNotesManager_1_1Entity_1_1Note}{Note}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{structNotesManager_1_1Entity_1_1Note_a1decaf165f9ea1f107c86bb80f34d7d5}\label{structNotesManager_1_1Entity_1_1Note_a1decaf165f9ea1f107c86bb80f34d7d5} 
+\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}!Note@{Note}}
+\index{Note@{Note}!NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+\doxysubsubsection{\texorpdfstring{Note()}{Note()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Notes\+Manager\+::\+Entity\+::\+Note\+::\+Note (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{serialized\+Data,  }\item[{\mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Crypto\+Algorithm}}}]{alg }\end{DoxyParamCaption})}
+
+
+
+Deserialization constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serialized\+Data} & Data serialized to byte blob \\
+\hline
+{\em alg} & Algorithm description object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structNotesManager_1_1Entity_1_1Note_a8be387c14aa220a2ffd2260272ae785e}\label{structNotesManager_1_1Entity_1_1Note_a8be387c14aa220a2ffd2260272ae785e} 
+\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}!Serialize@{Serialize}}
+\index{Serialize@{Serialize}!NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+\doxysubsubsection{\texorpdfstring{Serialize()}{Serialize()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Notes\+Manager\+::\+Entity\+::\+Note\+::\+Serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Serialization function. 
+
+Serialize \doxylink{structNotesManager_1_1Entity_1_1Note}{Note} structure to byte blob 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structNotesManager_1_1Entity_1_1Note_a5989865a0ae11f4ba794714e7eb041a4}\label{structNotesManager_1_1Entity_1_1Note_a5989865a0ae11f4ba794714e7eb041a4} 
+\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+\doxysubsubsection{\texorpdfstring{algorithm}{algorithm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNotesManager_1_1Entity_1_1CryptoAlgorithm}{Crypto\+Algorithm}} algorithm}
+
+
+
+\doxylink{structNotesManager_1_1Entity_1_1Note}{Note} algorithm. 
+
+\Hypertarget{structNotesManager_1_1Entity_1_1Note_af7c81312f79cd8172985e4a26847d951}\label{structNotesManager_1_1Entity_1_1Note_af7c81312f79cd8172985e4a26847d951} 
+\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}!wsData@{wsData}}
+\index{wsData@{wsData}!NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+\doxysubsubsection{\texorpdfstring{wsData}{wsData}}
+{\footnotesize\ttfamily std\+::wstring ws\+Data}
+
+
+
+\doxylink{structNotesManager_1_1Entity_1_1Note}{Note} data. 
+
+\Hypertarget{structNotesManager_1_1Entity_1_1Note_a3de7fe276d5c9195df42fbdfd74685cb}\label{structNotesManager_1_1Entity_1_1Note_a3de7fe276d5c9195df42fbdfd74685cb} 
+\index{NotesManager::Entity::Note@{NotesManager::Entity::Note}!wsTitle@{wsTitle}}
+\index{wsTitle@{wsTitle}!NotesManager::Entity::Note@{NotesManager::Entity::Note}}
+\doxysubsubsection{\texorpdfstring{wsTitle}{wsTitle}}
+{\footnotesize\ttfamily std\+::wstring ws\+Title}
+
+
+
+\doxylink{structNotesManager_1_1Entity_1_1Note}{Note} title. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/private/include/\+Entities/\mbox{\hyperlink{Note_8hpp}{Note.\+hpp}}\item 
+code/private/src/\mbox{\hyperlink{Note_8cpp}{Note.\+cpp}}\end{DoxyCompactItemize}

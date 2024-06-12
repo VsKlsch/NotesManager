@@ -3,8 +3,16 @@
 #include "../Usecases/Signer.hpp"
 #include "../Usecases/CryptoAlgorithm.hpp"
 
+/*!
+    \namespace NotesManager::Repository
+
+    \brief Namespace that contains interfaces and object for interaction with external resources in usecases
+*/
 namespace NotesManager::Repository{
 
+    /*!
+        \brief Basic realisation of ICryptoAlgorithm with function Verify for verify signers
+    */
     class BasicCryptoAlgorithm : public Usecases::ICryptoAlgorithm{
     public:
         virtual std::vector<uint8_t> Crypt(const std::vector<uint8_t>& data, const std::vector<uint8_t>& pass) const noexcept(false) override =0;
@@ -14,6 +22,9 @@ namespace NotesManager::Repository{
         virtual Entity::CryptoAlgorithm GetAlgorithmType() const noexcept override =0;
    };
 
+    /*!
+        \brief Cryptography algorithm implementation without crypt. Crypt and decrypt return its params and password is empty
+    */
     class NoCryptoAlgorithm : public BasicCryptoAlgorithm{
     public:
         virtual std::vector<uint8_t> Crypt(const std::vector<uint8_t>& data, const std::vector<uint8_t>& pass) const noexcept(false) override;
@@ -22,6 +33,14 @@ namespace NotesManager::Repository{
         virtual Entity::CryptoAlgorithm GetAlgorithmType() const noexcept override;
     };
 
+
+    /*!
+        \brief Cryptography algorithm implementation with xor as crypto algorithm.
+
+        \warning Password must be not empty. If password will empty then Crypt, Decrypt and Sign throws CryptoAlgorithmException
+
+        \param SignerAlg - Class that implement Signer interface. Need for Sign function.
+    */
     template<Usecases::SignAlgorithmImplementation SignerAlg>
     class XorCryptoAlgorithm : public BasicCryptoAlgorithm{
     public:

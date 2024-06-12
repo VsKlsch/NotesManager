@@ -1,0 +1,73 @@
+\doxysection{Notes\+Manager\+::Usecases\+::Note\+DTO Struct Reference}
+\hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO}{}\label{structNotesManager_1_1Usecases_1_1NoteDTO}\index{NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}}
+
+
+Basic model for database.  
+
+
+
+
+{\ttfamily \#include $<$Database.\+hpp$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO_a849090e160ffe69ed9bec857a1364803}{note\+Id}}
+\begin{DoxyCompactList}\small\item\em Database id of note. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO_ab7df849bdd3bf1a52bb9d31563e874ca}{algorithm\+Name}}
+\begin{DoxyCompactList}\small\item\em String representation of cryptoalgorithm. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO_ae081d61a778f0464ced3d2795e53601d}{data}}
+\begin{DoxyCompactList}\small\item\em Byte blob of encrypted data. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO_af3835211f1a9e9b4cea2470f6ebf650a}{sign}}
+\begin{DoxyCompactList}\small\item\em Byte blob of signature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic model for database. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_ab7df849bdd3bf1a52bb9d31563e874ca}\label{structNotesManager_1_1Usecases_1_1NoteDTO_ab7df849bdd3bf1a52bb9d31563e874ca} 
+\index{NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}!algorithmName@{algorithmName}}
+\index{algorithmName@{algorithmName}!NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}}
+\doxysubsubsection{\texorpdfstring{algorithmName}{algorithmName}}
+{\footnotesize\ttfamily std\+::string algorithm\+Name}
+
+
+
+String representation of cryptoalgorithm. 
+
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_ae081d61a778f0464ced3d2795e53601d}\label{structNotesManager_1_1Usecases_1_1NoteDTO_ae081d61a778f0464ced3d2795e53601d} 
+\index{NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}!data@{data}}
+\index{data@{data}!NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ data}
+
+
+
+Byte blob of encrypted data. 
+
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_a849090e160ffe69ed9bec857a1364803}\label{structNotesManager_1_1Usecases_1_1NoteDTO_a849090e160ffe69ed9bec857a1364803} 
+\index{NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}!noteId@{noteId}}
+\index{noteId@{noteId}!NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}}
+\doxysubsubsection{\texorpdfstring{noteId}{noteId}}
+{\footnotesize\ttfamily uint32\+\_\+t note\+Id}
+
+
+
+Database id of note. 
+
+\Hypertarget{structNotesManager_1_1Usecases_1_1NoteDTO_af3835211f1a9e9b4cea2470f6ebf650a}\label{structNotesManager_1_1Usecases_1_1NoteDTO_af3835211f1a9e9b4cea2470f6ebf650a} 
+\index{NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}!sign@{sign}}
+\index{sign@{sign}!NotesManager::Usecases::NoteDTO@{NotesManager::Usecases::NoteDTO}}
+\doxysubsubsection{\texorpdfstring{sign}{sign}}
+{\footnotesize\ttfamily std\+::vector$<$uint8\+\_\+t$>$ sign}
+
+
+
+Byte blob of signature. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/private/include/\+Usecases/\mbox{\hyperlink{Database_8hpp}{Database.\+hpp}}\end{DoxyCompactItemize}

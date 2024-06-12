@@ -1,0 +1,30 @@
+\doxysection{SQLite3.\+hpp}
+\hypertarget{SQLite3_8hpp_source}{}\label{SQLite3_8hpp_source}\index{code/private/include/Repo/SQLite3.hpp@{code/private/include/Repo/SQLite3.hpp}}
+\mbox{\hyperlink{SQLite3_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Database_8hpp}{../Usecases/Database.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceNotesManager_1_1Repository}{NotesManager::Repository}}\{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository}{SQLiteRepository}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase}{Usecases::IDatabase}}\{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_a281e7efbef8d7df188f9982917be3432}{SQLiteRepository}}(\textcolor{keyword}{const}\ std::filesystem::path\&\ dbPath);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aaa6f97dab6e3fc69d9aeef8c412141a8}{\string~SQLiteRepository}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<Usecases::NoteDTO>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aff78096046ebe90a52c6df9deba18028}{getAllNotes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::optional<Usecases::NoteDTO>\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aac12bf9dd6dce0c71efbe36aae6f8973}{getNoteById}}(uint32\_t\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_a683ac22d75375b1ddaac860f6f893180}{insertNote}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Usecases::NoteDTO}}\&\ note)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aaaff3e868d9dcd2e050e0b0427fdb928}{removeNoteById}}(uint32\_t\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_a6f09bc8445d22494baa37e90fdef9103}{updateNote}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Usecases::NoteDTO}}\&\ note)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ sqlite3*\ DB;}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ \}\ \ \ }
+
+\end{DoxyCode}

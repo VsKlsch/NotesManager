@@ -1,0 +1,152 @@
+\doxysection{Notes\+Manager\+::Usecases\+::IDatabase Class Reference}
+\hypertarget{classNotesManager_1_1Usecases_1_1IDatabase}{}\label{classNotesManager_1_1Usecases_1_1IDatabase}\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+
+
+Basic interface for all databases implementations.  
+
+
+
+
+{\ttfamily \#include $<$Database.\+hpp$>$}
+
+Inheritance diagram for Notes\+Manager\+::Usecases\+::IDatabase\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNotesManager_1_1Usecases_1_1IDatabase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} $>$ \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase_a9f80f2d992063be23722e1b37245890c}{get\+All\+Notes}} () const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function for selecting all notes from databse. \end{DoxyCompactList}\item 
+virtual std\+::optional$<$ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} $>$ \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase_af6a7de05d5fc6fd8d68dbf1e6259d33b}{get\+Note\+By\+Id}} (uint32\+\_\+t id) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function for get certain note by its id. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase_a475d1d54489ff673bc3780fefba005fb}{insert\+Note}} (const \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} \&note) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function for inserting note by. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase_a90b4a451d31acb1e7264751198a2b55e}{remove\+Note\+By\+Id}} (uint32\+\_\+t id) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function for removing note by id. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase_a6c37c5dadf3b041363a33d30a849098f}{update\+Note}} (const \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} \&note) const =0
+\begin{DoxyCompactList}\small\item\em Pure virtual function for update note in database. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classNotesManager_1_1Usecases_1_1IDatabase_a2361d79975e02f678533ff435d161604}{\texorpdfstring{$\sim$}{\string~}\+IDatabase}} ()=default
+\begin{DoxyCompactList}\small\item\em Pure virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic interface for all databases implementations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNotesManager_1_1Usecases_1_1IDatabase_a2361d79975e02f678533ff435d161604}\label{classNotesManager_1_1Usecases_1_1IDatabase_a2361d79975e02f678533ff435d161604} 
+\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}!````~IDatabase@{\texorpdfstring{$\sim$}{\string~}IDatabase}}
+\index{````~IDatabase@{\texorpdfstring{$\sim$}{\string~}IDatabase}!NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IDatabase()}{\string~IDatabase()}}
+{\footnotesize\ttfamily virtual Notes\+Manager\+::\+Usecases\+::\+IDatabase\+::\texorpdfstring{$\sim$}{\string~}\+IDatabase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Pure virtual destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNotesManager_1_1Usecases_1_1IDatabase_a9f80f2d992063be23722e1b37245890c}\label{classNotesManager_1_1Usecases_1_1IDatabase_a9f80f2d992063be23722e1b37245890c} 
+\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}!getAllNotes@{getAllNotes}}
+\index{getAllNotes@{getAllNotes}!NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+\doxysubsubsection{\texorpdfstring{getAllNotes()}{getAllNotes()}}
+{\footnotesize\ttfamily virtual std\+::vector$<$ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} $>$ Notes\+Manager\+::\+Usecases\+::\+IDatabase\+::get\+All\+Notes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function for selecting all notes from databse. 
+
+\begin{DoxyReturn}{Returns}
+Vector of all \doxylink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aff78096046ebe90a52c6df9deba18028}{Notes\+Manager\+::\+Repository\+::\+SQLite\+Repository}}.
+
+\Hypertarget{classNotesManager_1_1Usecases_1_1IDatabase_af6a7de05d5fc6fd8d68dbf1e6259d33b}\label{classNotesManager_1_1Usecases_1_1IDatabase_af6a7de05d5fc6fd8d68dbf1e6259d33b} 
+\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}!getNoteById@{getNoteById}}
+\index{getNoteById@{getNoteById}!NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+\doxysubsubsection{\texorpdfstring{getNoteById()}{getNoteById()}}
+{\footnotesize\ttfamily virtual std\+::optional$<$ \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} $>$ Notes\+Manager\+::\+Usecases\+::\+IDatabase\+::get\+Note\+By\+Id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function for get certain note by its id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Note database identificator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO} or Nullopt if not exists 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aac12bf9dd6dce0c71efbe36aae6f8973}{Notes\+Manager\+::\+Repository\+::\+SQLite\+Repository}}.
+
+\Hypertarget{classNotesManager_1_1Usecases_1_1IDatabase_a475d1d54489ff673bc3780fefba005fb}\label{classNotesManager_1_1Usecases_1_1IDatabase_a475d1d54489ff673bc3780fefba005fb} 
+\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}!insertNote@{insertNote}}
+\index{insertNote@{insertNote}!NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+\doxysubsubsection{\texorpdfstring{insertNote()}{insertNote()}}
+{\footnotesize\ttfamily virtual void Notes\+Manager\+::\+Usecases\+::\+IDatabase\+::insert\+Note (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} \&}]{note }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function for inserting note by. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em note} & Referenece to \doxylink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO} with data for inserting \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_a683ac22d75375b1ddaac860f6f893180}{Notes\+Manager\+::\+Repository\+::\+SQLite\+Repository}}.
+
+\Hypertarget{classNotesManager_1_1Usecases_1_1IDatabase_a90b4a451d31acb1e7264751198a2b55e}\label{classNotesManager_1_1Usecases_1_1IDatabase_a90b4a451d31acb1e7264751198a2b55e} 
+\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}!removeNoteById@{removeNoteById}}
+\index{removeNoteById@{removeNoteById}!NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+\doxysubsubsection{\texorpdfstring{removeNoteById()}{removeNoteById()}}
+{\footnotesize\ttfamily virtual void Notes\+Manager\+::\+Usecases\+::\+IDatabase\+::remove\+Note\+By\+Id (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function for removing note by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Note database identificator \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_aaaff3e868d9dcd2e050e0b0427fdb928}{Notes\+Manager\+::\+Repository\+::\+SQLite\+Repository}}.
+
+\Hypertarget{classNotesManager_1_1Usecases_1_1IDatabase_a6c37c5dadf3b041363a33d30a849098f}\label{classNotesManager_1_1Usecases_1_1IDatabase_a6c37c5dadf3b041363a33d30a849098f} 
+\index{NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}!updateNote@{updateNote}}
+\index{updateNote@{updateNote}!NotesManager::Usecases::IDatabase@{NotesManager::Usecases::IDatabase}}
+\doxysubsubsection{\texorpdfstring{updateNote()}{updateNote()}}
+{\footnotesize\ttfamily virtual void Notes\+Manager\+::\+Usecases\+::\+IDatabase\+::update\+Note (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO}} \&}]{note }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Pure virtual function for update note in database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em note} & Reference to \doxylink{structNotesManager_1_1Usecases_1_1NoteDTO}{Note\+DTO} with updated info \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classNotesManager_1_1Repository_1_1SQLiteRepository_a6f09bc8445d22494baa37e90fdef9103}{Notes\+Manager\+::\+Repository\+::\+SQLite\+Repository}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+code/private/include/\+Usecases/\mbox{\hyperlink{Database_8hpp}{Database.\+hpp}}\end{DoxyCompactItemize}
