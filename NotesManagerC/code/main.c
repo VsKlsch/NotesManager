@@ -1,74 +1,76 @@
-#include <stdio.h>
+#include <stdlib.h>
+#include <ncurses.h>
+#include "tui.h"
+#include "NotesManagerInclude/NotesManagerCore.h"
 
-#include "Algorithms.h"
-#include "NotesManagerCore.h"
+int main(int argc, char **argv)
+{
+    int user_key;
+     //Start curses
+    initscr( );
+    //No buffer for getch()
+    cbreak( );
+    raw( );
+    nonl( );
+    //no echo while entering from keyboard
+    noecho( );
+    //no text cursor
+    curs_set(0);
+    start_color();
+    //Enable special keys
+    keypad(stdscr, TRUE);
 
-int main(){
+    init_pair(DEFAULT_COLROS, COLOR_WHITE, COLOR_BLACK);
+    init_pair(BACKGROUND_COLOR_PAIR, COLOR_WHITE, COLOR_BLACK);
+    init_pair(TITLE_COLOR_PAIR, COLOR_GREEN, COLOR_RED);
+
+    int width = 20;
+    int height = 10;
+
     NotesManagerAPI* api = NotesManagerAPI_Init();
-    {
-        DecryptedNote* dnote = DecryptedNote_Init();
-        if(dnote){
-            DecryptedNote_SetData(dnote, L"Data String");
-            DecryptedNote_SetTitle(dnote, L"Note Title");
-            NotesManagerAPI_InsertNote(api, dnote, NO_ALGO, L"");
-            DecryptedNote_Destroy(dnote);
-        }
-    }
-    {
-        DecryptedNote* dnote = DecryptedNote_Init();
-        if(dnote){
-            DecryptedNote_SetData(dnote, L"Crypted Data String");
-            DecryptedNote_SetTitle(dnote, L"Note Title");
-            NotesManagerAPI_InsertNote(api, dnote, XOR, L"123123");
-            DecryptedNote_Destroy(dnote);
-        }
-    }
-
-    if(api != NULL){
-        while(1){
-            uint32_t id;
-            CryptedNote* cNote;
-            DecryptedNote* note;
-
-            wprintf(L"Enter node id or 0 to exit: ");
-            wscanf(L"%d", &id);
-
-            if(id == 0){
-                break;
-            }
-
-            cNote = NotesManagerAPI_GetNoteById(api, id);
-            if(cNote == NULL){
-                wprintf(L"Note not found\n");
-            }else{
-                note = CryptedNote_Decrypt(cNote, L"");
-                if(note == NULL){
-                    wchar_t pass[1024];
-                    wprintf(L"Enter password: ");
-                    wscanf(L"%1023ls", pass);
-                    wprintf(L"\n");
-                    DecryptedNote* dnote = CryptedNote_Decrypt(cNote, pass);
-                    if(dnote == NULL){
-                        wprintf(L"Bad password\n");
-                    }else{
-                        const wchar_t* title = DecryptedNote_GetTitle(dnote);
-                        const wchar_t* data = DecryptedNote_GetData(dnote);
-                        wprintf(L"ID: %d\nTitle: %ls\nData: %ls\n\n", id, title, data);
-                        DecryptedNote_Destroy(dnote);
-                    }
-                    wprintf(L"\n");
+    if (api != NULL){
+        uint32_t uintNotesCount;
+        CryptedNote** notes = NotesManagerAPI_GetAllNotes(api, &uintNotesCount);
+        if(notes != NULL && uintNotesCount>0){
+            uint32_t i;
+            Window** windows = (Window**)malloc(sizeof(Window*)*uintNotesCount);
+            for(i=0; i<uintNotesCount; ++i){ 
+                DecryptedNote *dNote = CryptedNote_Decrypt(notes[i], L"");
+                if(dNote != NULL){
+                    windows[i] = Window_Init(DecryptedNote_GetTitle(dNote), 2, 4*i, 25, 3);
+                    DecryptedNote_Destroy(dNote);
                 }else{
-                    const wchar_t* title = DecryptedNote_GetTitle(note);
-                    const wchar_t* data = DecryptedNote_GetData(note);
-                    wprintf(L"ID: %d\nTitle: %ls\nData: %ls\n\n", id, title, data);
-                    DecryptedNote_Destroy(note);
+                    windows[i] = Window_Init(L"Crypted Note", 2, 4*i, 25, 3);
                 }
-                CryptedNote_Destroy(cNote);
+                Window_Draw(windows[i]);
             }
-        }
-        printf("Exit\n");
-        NotesManagerAPI_Destroy(api);
+            do
+            {
+                switch ( user_key )
+                {
+                case KEY_RESIZE:
+                    for(i=0; i<uintNotesCount; ++i){
+                        Window_Draw(windows[i]);
+                    }
+                    break;
+                default:
 
+                break;
+                }
+                doupdate( );
+            }
+            while (( user_key = getch( )) != KEY_F(12));
+            for(i=0; i<uintNotesCount; ++i){
+                Window_Destroy(windows[i]);
+            }
+            NotesManagerAPI_FreeNotesArray(notes, uintNotesCount);
+        }else{
+            mvaddstr(5, 5, "No have notes in db or load error");
+            while (( user_key = getch( )) != KEY_F(12));
+        }
+
+        NotesManagerAPI_Destroy(api);
     }
+    endwin();
     return 0;
 }
